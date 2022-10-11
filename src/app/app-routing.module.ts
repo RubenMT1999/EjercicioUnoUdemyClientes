@@ -11,8 +11,8 @@ const routes: Routes = [];
 export class AppRoutingModule {
 
    routes: Routes = [
-    {path: '',component: ClientesComponent},
-    {path: '**', redirectTo: ''}
-    
+    {path: '',
+     loadChildren: () => import('./clientes/clientes.module').then(m => m.ClientesModule)
+    }
   ];
  }
